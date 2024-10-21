@@ -1,0 +1,88 @@
+@import '../../styles/theme.scss';
+
+.container {
+  position: relative;
+
+  .light {
+    position: absolute;
+    z-index: -1;
+    opacity: 14%;
+
+    &:nth-child(1) {
+      top: 60px;
+      right: -540px;
+      rotate: -25deg;
+      width: 744px;
+      height: 416px;
+    }
+
+    &:nth-child(2) {
+      left: -540px;
+      bottom: 60px;
+      rotate: 25deg;
+      opacity: 14%;
+      width: 640px;
+      height: 383px;
+    }
+  }
+
+  .title {
+    width: 310px;
+
+    em {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      color: $secondary;
+    }
+  }
+
+  .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 70px;
+
+    .item {
+      border-radius: 30px !important;
+      padding: 50px !important;
+      width: 400px;
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: white;
+      transition: all 200ms ease-in-out;
+
+      &.image {
+        cursor: pointer;
+
+        .image_container {
+          overflow: hidden;
+          border-radius: 28px;
+
+          img {
+            object-fit: contain;
+            object-position: center;
+            -o-object-fit: contain;
+            -o-object-position: center;
+            width: 100%;
+            height: 100%;
+            transition: transform 500ms ease-in-out;
+          }
+        }
+      }
+
+      &:hover {
+        color: white;
+        background-color: $primary;
+
+        img {
+          transform: scale(1.01);
+        }
+      }
+    }
+  }
+}

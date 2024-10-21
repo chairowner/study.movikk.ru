@@ -1,0 +1,36 @@
+@import '../../styles/theme.scss';
+
+.container {
+  display: flex;
+  gap: 20px;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(1) {
+      align-items: center;
+      justify-content: space-around;
+      gap: 30px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      flex: 1;
+    }
+
+    &:nth-child(2) {
+      width: 755px;
+
+      span,
+      strong {
+        font-size: 32px;
+        letter-spacing: 3%;
+        line-height: 70px;
+        text-transform: uppercase;
+      }
+
+      strong {
+        font-weight: 700;
+      }
+    }
+  }
+}

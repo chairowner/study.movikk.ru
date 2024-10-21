@@ -1,0 +1,83 @@
+@import '../../styles/theme.scss';
+
+.icon_wrapper {
+  .icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $bg-icon;
+    width: 370px;
+    height: 370px;
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+
+      &:nth-of-type(-n+2) {
+        width: 40px;
+        height: 40px;
+      }
+
+      &:nth-of-type(n+5):nth-of-type(-n+7) {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:nth-of-type(1) {
+        bottom: 90px;
+        left: -5px;
+      }
+
+      &:nth-of-type(2) {
+        top: -5px;
+        right: 0;
+      }
+
+      &:nth-of-type(3) {
+        width: 26px;
+        height: 26px;
+        bottom: 154px;
+        left: 23px;
+      }
+
+      &:nth-of-type(4) {
+        width: 15px;
+        height: 15px;
+        top: 86px;
+        right: 43px;
+      }
+
+      &:nth-of-type(5) {
+        bottom: 40px;
+        right: 20px;
+      }
+
+      &:nth-of-type(6) {
+        top: 55px;
+        right: -10px;
+      }
+
+      &:nth-of-type(7) {
+        bottom: -10px;
+        left: 55px;
+      }
+
+      &:nth-of-type(8) {
+        top: 2px;
+        right: 45px;
+        width: 10px;
+        height: 10px;
+      }
+
+      &.primary {
+        background-color: $primary;
+      }
+
+      &.secondary {
+        background-color: $bg-icon;
+      }
+    }
+  }
+}

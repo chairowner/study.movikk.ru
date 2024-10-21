@@ -1,0 +1,54 @@
+@import '../../styles/theme.scss';
+
+.container {
+  position: relative;
+
+  .light {
+    position: absolute;
+    z-index: -1;
+    opacity: 14%;
+
+    &:nth-child(1) {
+      top: -85px;
+      right: -180px;
+    }
+
+    &:nth-child(2) {
+      bottom: -160px;
+      left: -180px;
+      opacity: 14%;
+    }
+
+    &:nth-child(3) {
+      height: 470px;
+      width: 470px;
+      top: 25px;
+      left: -250px;
+      opacity: 10%;
+    }
+  }
+
+  .title {
+    max-width: 360px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .documents {
+    margin-top: 44px;
+    display: flex;
+    gap: 20px;
+
+    .item {
+      &:nth-child(1) {
+        margin-top: 160px;
+      }
+
+      &:nth-child(2) {
+        margin-top: 80px;
+      }
+    }
+  }
+}

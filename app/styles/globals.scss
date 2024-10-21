@@ -1,0 +1,71 @@
+@import './fonts.scss';
+@import './theme.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'TildaSans', sans-serif;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-weight: normal;
+  color: $primary;
+  background-color: $bg-secondary;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+}
+
+h1 {
+  font-size: 82px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 3%;
+}
+
+h2,
+h3 {
+  letter-spacing: 7%;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 48px;
+  font-weight: 600;
+  padding: 50px;
+  background-color: $primary;
+  color: white;
+  width: 100%;
+  border-radius: 70px;
+  text-align: center;
+}
+
+.body-secondary {
+  color: $secondary
+}
+
+.container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.bg-light {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background: $bg-lights;
+  filter: blur(80px);
+}

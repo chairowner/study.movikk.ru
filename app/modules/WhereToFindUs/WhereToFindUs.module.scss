@@ -1,0 +1,53 @@
+@import '../../styles/theme.scss';
+
+.wrapper {
+  background: $bg-welcome;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: $default-radius;
+  border-top-right-radius: $default-radius;
+  height: 900px;
+
+  .container {
+    display: flex;
+    gap: 30px;
+
+    .info {
+      width: 490px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 30px;
+
+      .list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .item {
+          font-size: 24px;
+          width: fit-content;
+
+          .content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+          }
+        }
+      }
+
+      .address {
+        font-size: 28px;
+      }
+    }
+
+    .map {
+      height: 425px;
+      flex: 1;
+      overflow: hidden;
+      border-radius: 25px;
+    }
+  }
+}
