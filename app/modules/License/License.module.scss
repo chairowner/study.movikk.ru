@@ -54,9 +54,9 @@
       flex-direction: column;
       gap: 10px;
       background-color: white;
-      transition: all 200ms ease-in-out;
 
       &.image {
+        transition: all 200ms ease-in-out;
         cursor: pointer;
 
         .image_container {
@@ -73,14 +73,14 @@
             transition: transform 500ms ease-in-out;
           }
         }
-      }
 
-      &:hover {
-        color: white;
-        background-color: $primary;
+        &:hover {
+          color: white;
+          background-color: $primary;
 
-        img {
-          transform: scale(1.01);
+          img {
+            transform: scale(1.01);
+          }
         }
       }
     }

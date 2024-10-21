@@ -1,4 +1,5 @@
 @import '../../styles/theme.scss';
+@import '../../styles/adaptive.scss';
 
 .container {
   background: $bg-welcome;
@@ -10,15 +11,34 @@
   display: flex;
   flex-direction: column-reverse;
 
+  @media (max-width: $mobile1) {
+    $offset: 20px;
+    height: auto;
+    border-bottom-right-radius: $mobile-radius;
+    border-bottom-left-radius: $mobile-radius;
+  }
+
   .left {
     margin-top: 90px;
     display: flex;
     flex-direction: column;
     gap: 50px;
 
+    @media (max-width: $desktop2) {
+      margin-top: 40px;
+    }
+
+    @media (max-width: $desktop3) {
+      gap: 30px;
+    }
+
     .title,
     .description {
       margin-left: -160px;
+
+      @media (max-width: $desktop1) {
+        margin-left: 0;
+      }
     }
 
     .description {
@@ -27,6 +47,21 @@
       font-weight: 400;
       width: 100%;
       max-width: 980px;
+
+      @media (max-width: $desktop3) {
+        font-size: 32px;
+        max-width: 780px;
+      }
+
+      @media (max-width: $desktop4) {
+        font-size: 24px;
+        max-width: 570px;
+      }
+
+      @media (max-width: $mobile1) {
+        font-size: 18px;
+        text-align: center;
+      }
     }
 
     .circle {
@@ -34,18 +69,45 @@
       height: 333px;
       border-radius: 50%;
       border: 1px solid white;
-      position: relative;
       margin-top: 40px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+
+      @media (max-width: $table1) {
+        width: 260px;
+        height: 260px;
+      }
+
+      @media (max-width: $mobile1) {
+        width: 200px;
+        margin-top: 6px;
+        height: 200px;
+      }
+
+      @media (max-width: $mobile2) {
+        width: 146px;
+        height: 146px;
+      }
 
       .text {
         position: absolute;
-        top: 25%;
-        left: 30%;
+        margin-left: 30%;
         color: white;
         font-size: 72px;
-        font-weight: 700;
+        font-weight: 800;
         text-transform: uppercase;
         width: 600px;
+
+        @media (max-width: $table1) {
+          font-size: 52px;
+        }
+
+        @media (max-width: $mobile1) {
+          font-size: 28px;
+          width: 223px;
+        }
       }
     }
   }
@@ -54,6 +116,12 @@
     flex: 1;
     position: relative;
 
+    @media (max-width: $mobile1) {
+      display: flex;
+      align-items: flex-end;
+      padding-top: 190px;
+    }
+
     .image {
       position: absolute;
       right: -220px;
@@ -61,10 +129,42 @@
       width: 950px;
       height: 633px;
 
+      @media (max-width: $desktop2) {
+        right: -100px;
+        height: 500px;
+      }
+
+      @media (max-width: $desktop3) {
+        right: -20px;
+        height: 360px;
+      }
+
+      @media (max-width: $table1) {
+        z-index: 1;
+        right: 0;
+      }
+
+      @media (max-width: $mobile1) {
+        position: absolute;
+        width: 100%;
+        height: 240px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
       img {
+        height: 100%;
+        width: auto;
         position: absolute;
         right: 0;
         bottom: 0;
+
+        @media (max-width: $mobile1) {
+          position: static;
+          right: auto;
+          bottom: auto;
+        }
       }
 
       .shadow {
@@ -74,11 +174,27 @@
         filter: blur(80px);
         opacity: 60%;
 
+        @media (max-width: $table1) {
+          display: none;
+        }
+
         &.first {
           width: 500px;
           height: 500px;
           left: -36px;
           top: -28px;
+
+          @media (max-width: $desktop2) {
+            width: 400px;
+            height: 400px;
+            left: 160px;
+            top: 0;
+          }
+
+          @media (max-width: $desktop3) {
+            left: 350px;
+            height: 360px;
+          }
         }
 
         &.second {
@@ -86,6 +202,17 @@
           height: 200px;
           top: 151px;
           right: 242px;
+
+          @media (max-width: $desktop2) {
+            width: 130px;
+            height: 130px;
+            top: 150px;
+            right: 200px;
+          }
+
+          @media (max-width: $desktop3) {
+            display: none;
+          }
         }
       }
     }

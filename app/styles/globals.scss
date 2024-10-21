@@ -1,5 +1,6 @@
 @import './fonts.scss';
 @import './theme.scss';
+@import './adaptive.scss';
 
 * {
   margin: 0;
@@ -27,22 +28,35 @@ h1 {
   font-size: 82px;
   font-weight: 600;
   color: white;
-  letter-spacing: 3%;
+  letter-spacing: 3px;
+
+  @media (max-width: $desktop3) {
+    font-size: 72px;
+  }
+
+  @media (max-width: $desktop4) {
+    font-size: 42px;
+  }
+
+  @media (max-width: $mobile1) {
+    font-size: 24px;
+    text-align: center;
+  }
 }
 
 h2,
 h3 {
-  letter-spacing: 7%;
+  letter-spacing: 4px;
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 700;
 }
 
 h3 {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 600;
   padding: 50px;
   background-color: $primary;
@@ -56,10 +70,31 @@ h3 {
   color: $secondary
 }
 
+.wrapper {
+  width: 100%;
+  padding: 0 40px;
+
+  @media (max-width: $mobile1) {
+    padding: 0 20px;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1380px;
   margin: 0 auto;
+
+  @media (max-width: $desktop3) {
+    max-width: 1124px;
+  }
+
+  @media (max-width: $desktop4) {
+    max-width: 742px;
+  }
+
+  @media (max-width: $table1) {
+    max-width: none;
+  }
 }
 
 .bg-light {

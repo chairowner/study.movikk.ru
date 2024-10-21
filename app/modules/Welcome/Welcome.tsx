@@ -16,14 +16,16 @@ export const Welcome = () => {
 					/>
 				</div>
 			</div>
-			<div className="container">
-				<div className={s.left}>
-					<h1 className={s.title}>ООО “Учебный центр «Мовикк»”</h1>
-					<div className={s.description}>
-						Хотите выдавать документы государственного образца вашим ученикам?
-					</div>
-					<div className={s.circle}>
-						<span className={s.text}>Аккредитация ваших курсов</span>
+			<div className="wrapper">
+				<div className="container">
+					<div className={s.left}>
+						<h1 className={s.title}>ООО “Учебный центр «Мовикк»”</h1>
+						<div className={s.description}>
+							Хотите выдавать документы государственного образца вашим ученикам?
+						</div>
+						<div className={s.circle}>
+							<div className={s.text}>Аккредитация ваших курсов</div>
+						</div>
 					</div>
 				</div>
 			</div>
