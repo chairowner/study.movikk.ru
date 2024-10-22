@@ -1,3 +1,5 @@
+"use client";
+import CookieConsent from "react-cookie-consent";
 import { Heading3 } from "./components/Heading3/Heading3";
 import { DocumentExamples } from "./modules/DocumentExamples/DocumentExamples";
 import { License } from "./modules/License/License";
@@ -15,6 +17,21 @@ export default function Home() {
 			<License />
 			<WhyYouNeed />
 			<WhereToFindUs />
+			<CookieConsent
+				location="bottom"
+				buttonText="ОК"
+				cookieName="cookieAccepted"
+				style={{ background: "#573993d9" }}
+				buttonStyle={{
+					background: "#ffffff",
+					color: "#222222",
+					fontSize: "18px",
+				}}
+				expires={150}
+			>
+				Этот веб-сайт использует файлы Cookie для улучшения пользовательского
+				опыта.
+			</CookieConsent>
 		</div>
 	);
 }

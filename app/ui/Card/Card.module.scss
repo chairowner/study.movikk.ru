@@ -1,6 +1,14 @@
+@import '../../styles/theme.scss';
+@import '../../styles/adaptive.scss';
+
 .container {
-  box-shadow: 0 0 20px rgba(78, 50, 135, 15%);
+  box-shadow: 0 0 20px #4e328726;
   padding: 70px;
-  border-radius: 70px;
+  border-radius: $default-radius;
   background-color: white;
+
+  @media (max-width: $mobile1) {
+    border-radius: $mobile-radius;
+    padding: 35px 20px;
+  }
 }
