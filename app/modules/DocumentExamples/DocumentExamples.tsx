@@ -18,19 +18,19 @@ export const DocumentExamples = () => {
 							className={s.item}
 							title="Свидетельство"
 							text="о профессии рабочего, должности военнослужащего"
-							img="/docs/1p7fxl1pwlknuzztl9mf9zbwfonpyfpo.png"
+							img="/images/docs/1p7fxl1pwlknuzztl9mf9zbwfonpyfpo.png"
 						/>
 						<DocumentExample
 							className={s.item}
 							title="Диплом"
 							text="о профессиональной подготовке"
-							img="/docs/fu683lif7jhss1icsgeyz0n6tmy5cbo1.png"
+							img="/images/docs/fu683lif7jhss1icsgeyz0n6tmy5cbo1.png"
 						/>
 						<DocumentExample
 							className={s.item}
 							title="Удостоверение"
 							text="о повышении квалификации"
-							img="/docs/hw4qpvutmxpxekzcwpvrshd200psrs2m.png"
+							img="/images/docs/hw4qpvutmxpxekzcwpvrshd200psrs2m.png"
 						/>
 					</div>
 				</div>

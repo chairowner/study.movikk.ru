@@ -22,7 +22,7 @@ export const DocumentExample: FC<DocumentExampleProps> = ({
 			<div className={s.title}>{title}</div>
 			<span>{text}</span>
 			<div className={s.image}>
-				<Image src={img} alt={title} width={406} height={330} />
+				<img src={img} alt={title} width={406} height={330} />
 			</div>
 		</Card>
 	);

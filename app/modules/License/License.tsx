@@ -53,23 +53,23 @@ const cards: JSX.Element[] = [
 	</Card>,
 	<Card className={classNames(s.item, s.image)}>
 		<div className={s.image_container}>
-			<Image
-				src="/docs/2423rfwefs.png"
+			<img
+				src="/images/docs/2423rfwefs.png"
 				alt="license"
 				width={300}
 				height={420}
-				priority={true}
+				/* priority={true} */
 			/>
 		</div>
 	</Card>,
 	<Card className={classNames(s.item, s.image)}>
 		<div className={s.image_container}>
-			<Image
-				src="/docs/g4f3g35g2f.png"
+			<img
+				src="/images/docs/g4f3g35g2f.png"
 				alt="license"
 				width={300}
 				height={420}
-				priority={true}
+				/* priority={true} */
 			/>
 		</div>
 	</Card>,
