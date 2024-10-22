@@ -3,8 +3,18 @@ import { YandexMetrika } from "./components/YandexMetrika/YandexMetrika";
 import "./styles/globals.scss";
 
 export const metadata: Metadata = {
-	title: 'Учебный центр "Мовикк"',
-	description: "Аккредитация ваших курсов",
+	title: "Учебный центр «Мовикк»",
+	description:
+		"Аккредитация ваших курсов. Хотите выдавать документы государственного образца вашим ученикам?",
+	keywords: [
+		"аккредитация",
+		"аккредитация курсов",
+		"аккредитация сертификатов",
+		"выдавать документы",
+		"учебный центр",
+		"мовикк",
+		"movikk",
+	],
 };
 
 export default function RootLayout({
@@ -14,7 +24,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ru">
-			<body>{children}</body>
+			<body>
+				{children}
+				<div id="modal-root"></div>
+			</body>
 			<YandexMetrika />
 		</html>
 	);

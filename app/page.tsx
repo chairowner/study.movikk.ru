@@ -7,32 +7,35 @@ import { Welcome } from "./modules/Welcome/Welcome";
 import { WhereToFindUs } from "./modules/WhereToFindUs/WhereToFindUs";
 import { WhyYouNeed } from "./modules/WhyYouNeed/WhyYouNeed";
 import s from "./page.module.scss";
+import { ModalProvider } from "./contexts/ModalContext";
 
 export default function Home() {
 	return (
-		<div className={s.container}>
-			<Welcome />
-			<DocumentExamples />
-			<Heading3 text="Берём на себя оформление всех документов" />
-			<License />
-			<WhyYouNeed />
-			<WhereToFindUs />
-			<CookieConsent
-				location="bottom"
-				buttonText="ОК"
-				cookieName="cookieAccepted"
-				style={{ background: "#573993d9" }}
-				buttonStyle={{
-					background: "#ffffff",
-					color: "#222222",
-					fontSize: "18px",
-					borderRadius: "10px",
-				}}
-				expires={150}
-			>
-				Этот веб-сайт использует файлы cookie для улучшения пользовательского
-				опыта.
-			</CookieConsent>
-		</div>
+		<ModalProvider>
+			<div className={s.container}>
+				<Welcome />
+				<DocumentExamples />
+				<Heading3 text="Берём на себя оформление всех документов" />
+				<License />
+				<WhyYouNeed />
+				<WhereToFindUs />
+				<CookieConsent
+					location="bottom"
+					buttonText="ОК"
+					cookieName="cookieAccepted"
+					style={{ background: "#573993d9" }}
+					buttonStyle={{
+						background: "#ffffff",
+						color: "#222222",
+						fontSize: "18px",
+						borderRadius: "10px",
+					}}
+					expires={150}
+				>
+					Этот веб-сайт использует файлы cookie для улучшения пользовательского
+					опыта.
+				</CookieConsent>
+			</div>
+		</ModalProvider>
 	);
 }

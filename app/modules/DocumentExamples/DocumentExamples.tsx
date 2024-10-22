@@ -1,8 +1,36 @@
-import { DocumentExample } from "@/app/components/DocumentExample/DocumentExample";
-import s from "./DocumentExamples.module.scss";
 import classNames from "classnames";
+import {
+	DocumentExample,
+	DocumentExampleProps,
+} from "@/app/components/DocumentExample/DocumentExample";
+import { useModal } from "@/app/contexts/ModalContext";
+import s from "./DocumentExamples.module.scss";
+
+const documentExamples: DocumentExampleProps[] = [
+	{
+		title: "Свидетельство",
+		text: "о профессии рабочего, должности военнослужащего",
+		img: "/images/docs/1p7fxl1pwlknuzztl9mf9zbwfonpyfpo.webp",
+	},
+	{
+		title: "Свидетельство",
+		text: "о профессии рабочего, должности военнослужащего",
+		img: "/images/docs/1p7fxl1pwlknuzztl9mf9zbwfonpyfpo.webp",
+	},
+	{
+		title: "Удостоверение",
+		text: "о повышении квалификации",
+		img: "/images/docs/hw4qpvutmxpxekzcwpvrshd200psrs2m.webp",
+	},
+];
 
 export const DocumentExamples = () => {
+	const { openModal } = useModal();
+
+	const handleDocumentClick = (img: string) => {
+		openModal(<img src={img} alt="Документ" />);
+	};
+
 	return (
 		<div className="wrapper">
 			<div className="container">
@@ -14,24 +42,14 @@ export const DocumentExamples = () => {
 						<h2 className={s.title}>Примеры документов</h2>
 					</div>
 					<div className={s.documents}>
-						<DocumentExample
-							className={s.item}
-							title="Свидетельство"
-							text="о профессии рабочего, должности военнослужащего"
-							img="/images/docs/1p7fxl1pwlknuzztl9mf9zbwfonpyfpo.webp"
-						/>
-						<DocumentExample
-							className={s.item}
-							title="Диплом"
-							text="о профессиональной подготовке"
-							img="/images/docs/fu683lif7jhss1icsgeyz0n6tmy5cbo1.webp"
-						/>
-						<DocumentExample
-							className={s.item}
-							title="Удостоверение"
-							text="о повышении квалификации"
-							img="/images/docs/hw4qpvutmxpxekzcwpvrshd200psrs2m.webp"
-						/>
+						{documentExamples.map((item, index) => (
+							<DocumentExample
+								key={index}
+								onClick={() => handleDocumentClick(item.img)}
+								className={s.item}
+								{...item}
+							/>
+						))}
 					</div>
 				</div>
 			</div>

@@ -9,66 +9,99 @@ import "swiper/css/scrollbar";
 import { Navigation, Pagination, Autoplay, Mousewheel } from "swiper/modules";
 import { Card } from "@/app/ui/Card/Card";
 import s from "./License.module.scss";
+import { useModal } from "@/app/contexts/ModalContext";
 
 const license: string = "0000000000";
 
-const cards: JSX.Element[] = [
-	<Card className={s.item}>
-		<b>Название организации</b>
-		<p>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "УЧЕБНЫЙ ЦЕНТР "МОВИКК"</p>
-		<b>Юридический адрес организации</b>
-		<p>
-			620036, РОССИЯ, СВЕРДЛОВСКАЯ ОБЛАСТЬ, Г.О. ГОРОД ЕКАТЕРИНБУРГ, Г
-			ЕКАТЕРИНБУРГ, УЛ. ЕВГЕНИЯ САВКОВА, Д. 35, КВ. 229
-		</p>
-	</Card>,
-	<Card className={s.item}>
-		<b>ИНН</b>
-		<p>6658576147</p>
-		<b>КПП</b>
-		<p>665801001</p>
-		<b>ОГРН/ОГРНИП</b>
-		<p>1246600049178</p>
-		<b>Расчетный счёт</b>
-		<p>40702810910001697980</p>
-	</Card>,
-	<Card className={s.item}>
-		<b>Банк</b>
-		<p>АО «ТБанк»</p>
-		<b>ИНН банка</b>
-		<p>7710140679</p>
-		<b>БИК банка</b>
-		<p>044525974</p>
-		<b>Корреспондентский счет банка</b>
-		<p>30101810145250000974</p>
-		<b>Юридический адрес банка</b>
-		<p>127287, г. Москва, ул. Хуторская 2-я, д. 38А, стр. 26</p>
-	</Card>,
-	<Card className={classNames(s.item, s.image)}>
-		<div className={s.image_container}>
-			<img
-				src="/images/docs/2423rfwefs.webp"
-				alt="license"
-				width={300}
-				height={420}
-			/>
-		</div>
-	</Card>,
-	<Card className={classNames(s.item, s.image)}>
-		<div className={s.image_container}>
-			<img
-				src="/images/docs/g4f3g35g2f.webp"
-				alt="license"
-				width={300}
-				height={420}
-			/>
-		</div>
-	</Card>,
+type CardType = {
+	img?: string;
+	element: JSX.Element;
+};
+
+const cards: CardType[] = [
+	{
+		element: (
+			<>
+				<b>Название организации</b>
+				<p>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "УЧЕБНЫЙ ЦЕНТР "МОВИКК"</p>
+				<b>Юридический адрес организации</b>
+				<p>
+					620036, РОССИЯ, СВЕРДЛОВСКАЯ ОБЛАСТЬ, Г.О. ГОРОД ЕКАТЕРИНБУРГ, Г
+					ЕКАТЕРИНБУРГ, УЛ. ЕВГЕНИЯ САВКОВА, Д. 35, КВ. 229
+				</p>
+			</>
+		),
+	},
+	{
+		element: (
+			<>
+				<b>ИНН</b>
+				<p>6658576147</p>
+				<b>КПП</b>
+				<p>665801001</p>
+				<b>ОГРН/ОГРНИП</b>
+				<p>1246600049178</p>
+				<b>Расчетный счёт</b>
+				<p>40702810910001697980</p>
+			</>
+		),
+	},
+	{
+		element: (
+			<>
+				<b>Банк</b>
+				<p>АО «ТБанк»</p>
+				<b>ИНН банка</b>
+				<p>7710140679</p>
+				<b>БИК банка</b>
+				<p>044525974</p>
+				<b>Корреспондентский счет банка</b>
+				<p>30101810145250000974</p>
+				<b>Юридический адрес банка</b>
+				<p>127287, г. Москва, ул. Хуторская 2-я, д. 38А, стр. 26</p>
+			</>
+		),
+	},
+	{
+		img: "/images/docs/2423rfwefs.webp",
+		element: (
+			<>
+				<div className={s.image_container}>
+					<img
+						src="/images/docs/2423rfwefs.webp"
+						alt="license"
+						width={300}
+						height={420}
+					/>
+				</div>
+			</>
+		),
+	},
+	{
+		img: "/images/docs/g4f3g35g2f.webp",
+		element: (
+			<>
+				<div className={s.image_container}>
+					<img
+						src="/images/docs/g4f3g35g2f.webp"
+						alt="license"
+						width={300}
+						height={420}
+					/>
+				</div>
+			</>
+		),
+	},
 ];
 
 export const License = () => {
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	const [isMobile2, setIsMobile2] = useState<boolean>(false);
+	const { openModal } = useModal();
+
+	const handleDocumentClick = (img: string) => {
+		openModal(<img src={img} alt="Документ" />);
+	};
 
 	useEffect(() => {
 		const isMobileQuery: MediaQueryList = window.matchMedia(
@@ -116,8 +149,8 @@ export const License = () => {
 									clickable: true,
 								}}
 								autoplay={{
-									delay: 3500,
-									disableOnInteraction: false,
+									delay: 35000,
+									disableOnInteraction: true,
 								}}
 								navigation={!isMobile2}
 								modules={[Pagination, Navigation, Autoplay, Mousewheel]}
@@ -125,7 +158,16 @@ export const License = () => {
 							>
 								{cards.map((element, index) => (
 									<SwiperSlide key={index} className={s.item_container}>
-										<div className={s.slider_item}>{element}</div>
+										<div className={s.slider_item}>
+											<Card
+												onClick={() =>
+													element.img && handleDocumentClick(element.img)
+												}
+												className={classNames(s.item, element.img && s.image)}
+											>
+												{element.element}
+											</Card>
+										</div>
 									</SwiperSlide>
 								))}
 							</Swiper>
@@ -133,7 +175,14 @@ export const License = () => {
 							<div className={s.items}>
 								{cards.map((element, index) => (
 									<div key={index} className={s.item_container}>
-										{element}
+										<Card
+											onClick={() =>
+												element.img && handleDocumentClick(element.img)
+											}
+											className={classNames(s.item, element.img && s.image)}
+										>
+											{element.element}
+										</Card>
 									</div>
 								))}
 							</div>

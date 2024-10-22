@@ -11,6 +11,21 @@
   height: fit-content;
   cursor: pointer;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  position: relative;
+
+  &::after {
+    content: 'Открыть документ';
+    position: absolute;
+    align-self: center;
+    bottom: 0;
+    background-color: $primary;
+    color: white;
+    text-align: center;
+    vertical-align: text-bottom;
+    border-radius: 10px 10px 0 0;
+    padding: 6px 10px;
+    transition: background-color 180ms ease-in-out, color 180ms ease-in-out;
+  }
 
   @media (max-width: $desktop4) {
     font-size: 16px;
@@ -74,6 +89,11 @@
   &:hover {
     color: white;
     background-color: $primary;
+
+    &::after {
+      background-color: white;
+      color: $primary;
+    }
 
     .title {
       color: $primary;

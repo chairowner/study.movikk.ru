@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { FC } from "react";
+import { FC, MouseEventHandler } from "react";
 import s from "./DocumentExample.module.scss";
 import { Card } from "@/app/ui/Card/Card";
 import classNames from "classnames";
@@ -9,16 +8,18 @@ export type DocumentExampleProps = {
 	text: string;
 	img: string;
 	className?: string;
+	onClick?: MouseEventHandler<HTMLDivElement>;
 };
 
 export const DocumentExample: FC<DocumentExampleProps> = ({
+	onClick,
 	title,
 	text,
 	img,
 	className,
 }) => {
 	return (
-		<Card className={classNames(s.container, className)}>
+		<Card className={classNames(s.container, className)} onClick={onClick}>
 			<div className={s.title}>{title}</div>
 			<span>{text}</span>
 			<div className={s.image}>
