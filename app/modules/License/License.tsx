@@ -1,19 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import classNames from "classnames";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import {
-	Navigation,
-	Pagination,
-	Autoplay,
-	Mousewheel,
-	Scrollbar,
-} from "swiper/modules";
+import { Navigation, Pagination, Autoplay, Mousewheel } from "swiper/modules";
 import { Card } from "@/app/ui/Card/Card";
 import s from "./License.module.scss";
 
@@ -54,22 +47,20 @@ const cards: JSX.Element[] = [
 	<Card className={classNames(s.item, s.image)}>
 		<div className={s.image_container}>
 			<img
-				src="/images/docs/2423rfwefs.png"
+				src="/images/docs/2423rfwefs.webp"
 				alt="license"
 				width={300}
 				height={420}
-				/* priority={true} */
 			/>
 		</div>
 	</Card>,
 	<Card className={classNames(s.item, s.image)}>
 		<div className={s.image_container}>
 			<img
-				src="/images/docs/g4f3g35g2f.png"
+				src="/images/docs/g4f3g35g2f.webp"
 				alt="license"
 				width={300}
 				height={420}
-				/* priority={true} */
 			/>
 		</div>
 	</Card>,
@@ -133,7 +124,7 @@ export const License = () => {
 								className={classNames(s.slider, s.items)}
 							>
 								{cards.map((element, index) => (
-									<SwiperSlide key={index}>
+									<SwiperSlide key={index} className={s.item_container}>
 										<div className={s.slider_item}>{element}</div>
 									</SwiperSlide>
 								))}
@@ -141,7 +132,9 @@ export const License = () => {
 						) : (
 							<div className={s.items}>
 								{cards.map((element, index) => (
-									<div key={index}>{element}</div>
+									<div key={index} className={s.item_container}>
+										{element}
+									</div>
 								))}
 							</div>
 						)}

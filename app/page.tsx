@@ -26,10 +26,11 @@ export default function Home() {
 					background: "#ffffff",
 					color: "#222222",
 					fontSize: "18px",
+					borderRadius: "10px",
 				}}
 				expires={150}
 			>
-				Этот веб-сайт использует файлы Cookie для улучшения пользовательского
+				Этот веб-сайт использует файлы cookie для улучшения пользовательского
 				опыта.
 			</CookieConsent>
 		</div>

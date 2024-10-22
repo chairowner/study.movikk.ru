@@ -1,5 +1,5 @@
-import s from "./Welcome.module.scss";
 import classNames from "classnames";
+import s from "./Welcome.module.scss";
 
 export const Welcome = () => {
 	return (
@@ -9,14 +9,14 @@ export const Welcome = () => {
 					<div className={classNames(s.shadow, s.first)}></div>
 					<div className={classNames(s.shadow, s.second)}></div>
 					<img
-						src="/images/welcome_photo.png"
+						src="/images/welcome_photo.webp"
 						alt="welcome photo"
 						width={950}
 						height={633}
 					/>
 				</div>
 			</div>
-			<div className="wrapper">
+			<div className={classNames("wrapper", s.content)}>
 				<div className="container">
 					<div className={s.left}>
 						<h1 className={s.title}>ООО “Учебный центр «Мовикк»”</h1>

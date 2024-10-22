@@ -31,11 +31,15 @@ h1 {
   letter-spacing: 3px;
 
   @media (max-width: $desktop3) {
-    font-size: 72px;
+    font-size: 66px;
   }
 
   @media (max-width: $desktop4) {
-    font-size: 42px;
+    font-size: 40px;
+  }
+
+  @media (max-width: $table1) {
+    font-size: 30px;
   }
 
   @media (max-width: $mobile1) {

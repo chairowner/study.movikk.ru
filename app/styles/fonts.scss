@@ -1,7 +1,7 @@
 $font-weights: (300: 'Light',
   400: 'Regular',
   500: 'Medium',
-  600: 'Semibold',
+  600: 'SemiBold',
   700: 'Bold',
   800: 'ExtraBold',
   900: 'Black'
@@ -11,7 +11,9 @@ $font-weights: (300: 'Light',
 $style in $font-weights {
   @font-face {
     font-family: 'TildaSans';
-    src: url('/fonts/TildaSans/TildaSans-#{$style}.ttf') format('truetype');
+    src: url('/fonts/TildaSans/TildaSans-VF.woff2') format('woff2'),
+    url('/fonts/TildaSans/TildaSans-VF.woff') format('woff'),
+    url('/fonts/TildaSans/TildaSans-#{$style}.ttf') format('truetype');
     font-weight: $weight;
     font-style: normal;
   }

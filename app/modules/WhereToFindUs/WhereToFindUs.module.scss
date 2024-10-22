@@ -8,11 +8,12 @@
   align-items: center;
   border-top-left-radius: $default-radius;
   border-top-right-radius: $default-radius;
-  height: 900px;
+  height: 98vh;
 
   @media (max-width: $table1) {
     height: auto;
     padding: 37px 30px 30px;
+    margin-top: 30px;
   }
 
   .container {
@@ -52,7 +53,7 @@
           font-size: 24px;
 
           @media (max-width: $desktop4) {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 500;
           }
 

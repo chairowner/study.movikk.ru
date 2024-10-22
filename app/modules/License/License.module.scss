@@ -54,35 +54,57 @@
       margin-top: 20px;
     }
 
-    .item {
-      border-radius: 30px !important;
-      background-color: white;
+    .item_container {
+      @media (min-width: $desktop4) {
+        &:nth-child(-n+3) {
+          flex: 1;
 
-      &.image {
-        transition: all 200ms ease-in-out;
-        cursor: pointer;
-
-        .image_container {
-          overflow: hidden;
-          border-radius: 28px;
-
-          img {
-            object-fit: contain;
-            object-position: center;
-            -o-object-fit: contain;
-            -o-object-position: center;
-            width: 100%;
-            height: 100%;
-            transition: transform 500ms ease-in-out;
+          .item {
+            width: 100% !important;
           }
         }
+      }
 
-        &:hover {
-          color: white;
-          background-color: $primary;
+      @media (max-width: $desktop4) {
+        &:nth-child(n+4) {
+          order: -1;
+        }
 
-          img {
-            transform: scale(1.01);
+        &:nth-child(n+5) {
+          order: -2;
+        }
+      }
+
+      .item {
+        border-radius: 30px !important;
+        background-color: white;
+
+        &.image {
+          transition: all 200ms ease-in-out;
+          cursor: pointer;
+
+          .image_container {
+            overflow: hidden;
+            border-radius: 28px;
+
+            img {
+              object-fit: contain;
+              object-position: center;
+              -o-object-fit: contain;
+              -o-object-position: center;
+              width: 100%;
+              height: 100%;
+              transition: transform 500ms ease-in-out;
+            }
+          }
+
+          &:hover {
+            color: white;
+            background-color: $primary;
+
+            img {
+              transform: scale(1.01);
+            }
           }
         }
       }
@@ -90,7 +112,7 @@
 
     &.slider {
       .slider_item {
-        padding: 40px 50px;
+        padding: 20px 52px 50px;
 
         @media (max-width: $mobile2) {
           padding: 5px 10px 50px 10px;

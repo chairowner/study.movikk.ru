@@ -1,7 +1,7 @@
 import { Card } from "@/app/ui/Card/Card";
-import s from "./WhyYouNeed.module.scss";
 import { DocumentIcon } from "@/app/ui/DocumentIcon/DocumentIcon";
 import classNames from "classnames";
+import s from "./WhyYouNeed.module.scss";
 
 export const WhyYouNeed = () => {
 	return (
