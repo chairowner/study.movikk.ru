@@ -71,8 +71,24 @@ h3 {
   background-color: $primary;
   color: white;
   width: 100%;
-  border-radius: 70px;
+  border-radius: $default-radius;
   text-align: center;
+
+  @media (max-width: $desktop3) {
+    font-size: 32px;
+    padding: 40px;
+  }
+
+  @media (max-width: $desktop4) {
+    font-size: 24px;
+    padding: 30px;
+  }
+
+  @media (max-width: $table1) {
+    padding: 20px;
+    font-size: 24px;
+    border-radius: $mobile-radius;
+  }
 }
 
 .body-secondary {

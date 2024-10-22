@@ -5,8 +5,10 @@ type Heading3Props = {
 };
 export const Heading3: FC<Heading3Props> = ({ text }) => {
 	return (
-		<div className="container">
-			<h3>{text}</h3>
+		<div className="wrapper">
+			<div className="container">
+				<h3>{text}</h3>
+			</div>
 		</div>
 	);
 };
