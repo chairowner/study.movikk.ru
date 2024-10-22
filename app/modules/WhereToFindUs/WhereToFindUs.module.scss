@@ -1,4 +1,5 @@
 @import '../../styles/theme.scss';
+@import '../../styles/adaptive.scss';
 
 .wrapper {
   background: $bg-welcome;
@@ -9,16 +10,31 @@
   border-top-right-radius: $default-radius;
   height: 900px;
 
+  @media (max-width: $table1) {
+    height: auto;
+    padding: 37px 30px 30px;
+  }
+
   .container {
     display: flex;
     gap: 30px;
 
+    @media (max-width: $desktop4) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
     .info {
-      width: 490px;
+      width: 100%;
+      max-width: 490px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 30px;
+
+      @media (max-width: $desktop4) {
+        gap: 20px;
+      }
 
       .list {
         list-style-type: none;
@@ -26,28 +42,51 @@
         flex-direction: column;
         gap: 20px;
 
+        @media (max-width: $desktop4) {
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+
         .item {
-          font-size: 24px;
           width: fit-content;
+          font-size: 24px;
+
+          @media (max-width: $desktop4) {
+            font-size: 18px;
+            font-weight: 500;
+          }
 
           .content {
             display: flex;
             align-items: center;
             gap: 20px;
+
+            @media (max-width: $desktop4) {
+              gap: 10px;
+            }
           }
         }
       }
 
       .address {
         font-size: 28px;
+
+        @media (max-width: $desktop4) {
+          font-size: 18px;
+          font-weight: 500;
+        }
       }
     }
 
     .map {
-      height: 425px;
       flex: 1;
+      height: 425px;
       overflow: hidden;
       border-radius: 25px;
+
+      @media (max-width: $desktop4) {
+        gap: 10px;
+      }
     }
   }
 }
