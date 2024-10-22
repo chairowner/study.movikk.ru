@@ -1,6 +1,12 @@
+@import './styles/adaptive.scss';
+
 .container {
   display: flex;
   flex-direction: column;
   gap: 140px;
   overflow: hidden;
+
+  @media (max-width: $mobile1) {
+    gap: 30px;
+  }
 }

@@ -53,6 +53,15 @@ h3 {
 h2 {
   font-size: 48px;
   font-weight: 700;
+
+  @media (max-width: $desktop4) {
+    font-size: 34px;
+    font-weight: 800;
+  }
+
+  @media (max-width: $mobile1) {
+    font-size: 28px;
+  }
 }
 
 h3 {
