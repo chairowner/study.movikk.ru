@@ -12,12 +12,12 @@ const info: TypeInfo[] = [
 	{
 		icon: "whatsapp.svg",
 		text: "+7 (993) 500 800 00",
-		url: "https://wa.me/799350080000",
+		url: "799350080000",
 		title: "What's App",
 	},
 	{
 		icon: "vk.svg",
-		text: "vk.com/movikkuchcentr",
+		text: "movikkuchcentr",
 		url: "https://vk.com/movikkuchcentr",
 		title: "ВКонтакте",
 	},

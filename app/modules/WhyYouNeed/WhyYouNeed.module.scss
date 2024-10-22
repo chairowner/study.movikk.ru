@@ -1,8 +1,14 @@
 @import '../../styles/theme.scss';
+@import '../../styles/adaptive.scss';
 
 .container {
+  position: relative;
   display: flex;
   gap: 20px;
+
+  @media (max-width: $desktop3) {
+    flex-direction: column;
+  }
 
   .item {
     display: flex;
@@ -15,10 +21,59 @@
       padding-top: 40px;
       padding-bottom: 40px;
       flex: 1;
+
+      @media (max-width: $desktop3) {
+        flex: auto;
+
+        .icon_wrapper {
+          position: absolute;
+          bottom: -50px;
+          left: -50px;
+          width: auto;
+
+          @media (max-width: $table1) {
+            bottom: -20px;
+            left: -70px;
+          }
+
+          @media (max-width: $mobile1) {
+            bottom: -25px;
+            left: -35px;
+          }
+
+          .icon {
+            width: 200px;
+            height: 200px;
+
+            @media (max-width: $desktop4) {
+              width: 180px;
+              height: 180px;
+            }
+
+            @media (max-width: $table1) {
+              width: 160px;
+              height: 160px;
+            }
+
+            @media (max-width: $mobile1) {
+              width: 80px;
+              height: 80px;
+            }
+          }
+        }
+      }
+
+      @media (max-width: $mobile1) {
+        padding-bottom: 0;
+      }
     }
 
     &:nth-child(2) {
       width: 755px;
+
+      @media (max-width: $desktop3) {
+        width: 100%;
+      }
 
       span,
       strong {
@@ -27,6 +82,19 @@
         line-height: 70px;
         text-transform: uppercase;
         text-align: center;
+
+        @media (max-width: $desktop3) {
+          font-size: 24px;
+        }
+
+        @media (max-width: $mobile1) {
+          font-size: 18px;
+          line-height: 30px;
+        }
+
+        @media (max-width: $mobile2) {
+          font-size: 14px;
+        }
       }
 
       strong {
