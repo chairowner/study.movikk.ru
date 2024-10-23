@@ -81,12 +81,15 @@
 
     .map {
       flex: 1;
-      height: 425px;
       overflow: hidden;
       border-radius: 25px;
 
-      @media (max-width: $desktop4) {
-        gap: 10px;
+      iframe {
+        height: 425px;
+
+        @media (max-width: $desktop4) {
+          height: 270px;
+        }
       }
     }
   }

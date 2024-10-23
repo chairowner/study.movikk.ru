@@ -11,7 +11,7 @@ export function YandexMetrika() {
          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
          (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
       
-         ym(98697832, "init", {
+         ym(${process.env.YANDEX_METRIKA}, "init", {
               clickmap:true,
               trackLinks:true,
               accurateTrackBounce:true,

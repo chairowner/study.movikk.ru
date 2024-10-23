@@ -28,7 +28,7 @@ export default function RootLayout({
 				{children}
 				<div id="modal-root"></div>
 			</body>
-			<YandexMetrika />
+			{process.env.YANDEX_METRIKA && <YandexMetrika />}
 		</html>
 	);
 }

@@ -6,8 +6,8 @@ import { License } from "./modules/License/License";
 import { Welcome } from "./modules/Welcome/Welcome";
 import { WhereToFindUs } from "./modules/WhereToFindUs/WhereToFindUs";
 import { WhyYouNeed } from "./modules/WhyYouNeed/WhyYouNeed";
-import s from "./page.module.scss";
 import { ModalProvider } from "./contexts/ModalContext";
+import s from "./page.module.scss";
 
 export default function Home() {
 	return (
