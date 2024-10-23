@@ -40,20 +40,19 @@ export const DocumentExamples = () => {
 					<div className={classNames("bg-light", s.light)} />
 					<div className={classNames("bg-light", s.light)} />
 					<div className={classNames("bg-light", s.light)} />
-					<InView>
-						<div className={s.title_container}>
-							<h2 className={s.title}>Примеры документов</h2>
-						</div>
+					<InView className={s.title_container}>
+						<h2 className={s.title}>Примеры документов</h2>
 					</InView>
-					<div className={s.documents}>
+					<InView className={s.documents}>
 						{documentExamples.map((item, index) => (
-							<InView key={index} className={s.item}>
-								<div onClick={() => handleDocumentClick(item.img)}>
-									<DocumentExample {...item} />
-								</div>
-							</InView>
+							<DocumentExample
+								key={index}
+								onClick={() => handleDocumentClick(item.img)}
+								className={s.item}
+								{...item}
+							/>
 						))}
-					</div>
+					</InView>
 				</div>
 			</div>
 		</div>

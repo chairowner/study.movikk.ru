@@ -1,8 +1,14 @@
-import React, { useRef, useState, useEffect, ReactNode } from "react";
+import React, {
+	useRef,
+	useState,
+	useEffect,
+	ReactNode,
+	HTMLAttributes,
+} from "react";
 import classNames from "classnames";
 import s from "./InView.module.scss"; // Создаем отдельный модуль стилей
 
-interface InViewProps {
+interface InViewProps extends HTMLAttributes<HTMLDivElement> {
 	children?: ReactNode;
 	className?: string;
 	threshold?: number;
@@ -11,7 +17,8 @@ interface InViewProps {
 export const InView: React.FC<InViewProps> = ({
 	children,
 	className,
-	threshold = 0.1, // По умолчанию 10%
+	threshold = 0.1,
+	...props
 }) => {
 	const [isVisible, setVisible] = useState(false);
 	const ref = useRef<HTMLDivElement | null>(null);
@@ -40,6 +47,7 @@ export const InView: React.FC<InViewProps> = ({
 			className={classNames(s.fadeIn, className, {
 				[s.visible]: isVisible,
 			})}
+			{...props}
 		>
 			{children}
 		</div>
