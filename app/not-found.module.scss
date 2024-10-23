@@ -1,0 +1,42 @@
+@import './styles/adaptive.scss';
+
+.wrapper {
+  background: linear-gradient(-114deg, #573993 32%, #230C51 114%);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    margin-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+
+    @media (max-width: $mobile1) {
+      align-items: center;
+    }
+
+    .button {
+      font-size: 22px;
+      background-color: white;
+      padding: 10px 16px;
+      border-radius: 30px;
+
+      @media (max-width: $desktop4) {
+        font-size: 18px;
+      }
+
+      @media (max-width: $table1) {
+        font-size: 16px;
+      }
+
+      @media (max-width: $mobile1) {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+}
