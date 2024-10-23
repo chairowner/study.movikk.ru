@@ -20,68 +20,95 @@
       border-radius: 50%;
 
       &:nth-of-type(-n+2) {
-        width: 10.81%; // 40px / 370px * 100%
+        width: 10.81%;
         height: 10.81%;
       }
 
       &:nth-of-type(n+5):nth-of-type(-n+7) {
-        width: 5.41%; // 20px / 370px * 100%
+        width: 5.41%;
         height: 5.41%;
       }
 
       &:nth-of-type(1) {
-        bottom: 24.32%; // 90px / 370px * 100%
-        left: -1.35%; // -5px / 370px * 100%
+        bottom: 24.32%;
+        left: -1.35%;
       }
 
       &:nth-of-type(2) {
-        top: -1.35%; // -5px / 370px * 100%
+        top: -1.35%;
         right: 0;
       }
 
       &:nth-of-type(3) {
-        width: 7.03%; // 26px / 370px * 100%
+        width: 7.03%;
         height: 7.03%;
-        bottom: 41.62%; // 154px / 370px * 100%
-        left: 6.22%; // 23px / 370px * 100%
+        bottom: 41.62%;
+        left: 6.22%;
       }
 
       &:nth-of-type(4) {
-        width: 4.05%; // 15px / 370px * 100%
+        width: 4.05%;
         height: 4.05%;
-        top: 23.24%; // 86px / 370px * 100%
-        right: 11.62%; // 43px / 370px * 100%
+        top: 23.24%;
+        right: 11.62%;
       }
 
       &:nth-of-type(5) {
-        bottom: 10.81%; // 40px / 370px * 100%
-        right: 5.41%; // 20px / 370px * 100%
+        bottom: 10.81%;
+        right: 5.41%;
       }
 
       &:nth-of-type(6) {
-        top: 14.86%; // 55px / 370px * 100%
-        right: -2.7%; // -10px / 370px * 100%
+        top: 14.86%;
+        right: -2.7%;
       }
 
       &:nth-of-type(7) {
-        bottom: -2.7%; // -10px / 370px * 100%
-        left: 14.86%; // 55px / 370px * 100%
+        bottom: -2.7%;
+        left: 14.86%;
       }
 
       &:nth-of-type(8) {
-        top: 0.54%; // 2px / 370px * 100%
-        right: 12.16%; // 45px / 370px * 100%
-        width: 2.7%; // 10px / 370px * 100%
+        top: 0.54%;
+        right: 12.16%;
+        width: 2.7%;
         height: 2.7%;
       }
 
       &.primary {
         background-color: $primary;
+        animation: bubblePrimaryFloat 4s ease-in-out infinite;
       }
 
       &.secondary {
         background-color: $bg-icon;
+        animation: bubbleFloatSecondary 3s ease-in-out infinite;
       }
     }
+  }
+}
+
+@keyframes bubblePrimaryFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-40%);
+  }
+}
+
+
+@keyframes bubbleFloatSecondary {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-80%);
   }
 }
