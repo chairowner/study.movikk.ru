@@ -1,9 +1,11 @@
+import React from "react";
 import classNames from "classnames";
 import {
 	DocumentExample,
 	DocumentExampleProps,
 } from "@/app/components/DocumentExample/DocumentExample";
 import { useModal } from "@/app/contexts/ModalContext";
+import { InView } from "@/app/ui/InView/InView";
 import s from "./DocumentExamples.module.scss";
 
 const documentExamples: DocumentExampleProps[] = [
@@ -13,9 +15,9 @@ const documentExamples: DocumentExampleProps[] = [
 		img: "/images/docs/1p7fxl1pwlknuzztl9mf9zbwfonpyfpo.webp",
 	},
 	{
-		title: "Свидетельство",
-		text: "о профессии рабочего, должности военнослужащего",
-		img: "/images/docs/1p7fxl1pwlknuzztl9mf9zbwfonpyfpo.webp",
+		title: "Диплом",
+		text: "о профессиональной подготовке",
+		img: "/images/docs/fu683lif7jhss1icsgeyz0n6tmy5cbo1.webp",
 	},
 	{
 		title: "Удостоверение",
@@ -38,17 +40,18 @@ export const DocumentExamples = () => {
 					<div className={classNames("bg-light", s.light)} />
 					<div className={classNames("bg-light", s.light)} />
 					<div className={classNames("bg-light", s.light)} />
-					<div className={s.title_container}>
-						<h2 className={s.title}>Примеры документов</h2>
-					</div>
+					<InView>
+						<div className={s.title_container}>
+							<h2 className={s.title}>Примеры документов</h2>
+						</div>
+					</InView>
 					<div className={s.documents}>
 						{documentExamples.map((item, index) => (
-							<DocumentExample
-								key={index}
-								onClick={() => handleDocumentClick(item.img)}
-								className={s.item}
-								{...item}
-							/>
+							<InView key={index} className={s.item}>
+								<div onClick={() => handleDocumentClick(item.img)}>
+									<DocumentExample {...item} />
+								</div>
+							</InView>
 						))}
 					</div>
 				</div>

@@ -21,6 +21,19 @@ export const metadata: Metadata = {
 		"мовикк",
 		"movikk",
 	],
+	twitter: {
+		title,
+		description,
+		site: url,
+		images: [
+			{
+				url: url + "/images/36e63456-61f3-46b7-b7f0-51b2c3c3924a.webp",
+				width: 1893,
+				height: 903,
+				alt: title,
+			},
+		],
+	},
 	openGraph: {
 		title,
 		description,

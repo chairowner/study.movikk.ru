@@ -14,6 +14,7 @@ import {
 import { Card } from "@/app/ui/Card/Card";
 import s from "./License.module.scss";
 import { useModal } from "@/app/contexts/ModalContext";
+import { InView } from "@/app/ui/InView/InView";
 
 const license: string = "0000000000";
 
@@ -139,30 +140,49 @@ export const License = () => {
 					<div className={s.container}>
 						<div className={classNames("bg-light", s.light)} />
 						<div className={classNames("bg-light", s.light)} />
-						<div className={s.title}>
-							<h2>У нас есть лицензия</h2>
-							<em>№{license}</em>
-						</div>
-						{isMobile ? (
-							<Swiper
-								slidesPerView={1}
-								spaceBetween={30}
-								loop={true}
-								mousewheel={true}
-								pagination={{
-									clickable: true,
-								}}
-								/* autoplay={{
+						<InView>
+							<div className={s.title}>
+								<h2>У нас есть лицензия</h2>
+								<em>№{license}</em>
+							</div>
+						</InView>
+						<InView>
+							{isMobile ? (
+								<Swiper
+									slidesPerView={1}
+									spaceBetween={30}
+									loop={true}
+									mousewheel={true}
+									pagination={{
+										clickable: true,
+									}}
+									/* autoplay={{
 									delay: 35000,
 									disableOnInteraction: true,
 								}} */
-								navigation={!isMobile2}
-								modules={[Pagination, Navigation, /* Autoplay, */ Mousewheel]}
-								className={classNames(s.slider, s.items)}
-							>
-								{cards.map((element, index) => (
-									<SwiperSlide key={index} className={s.item_container}>
-										<div className={s.slider_item}>
+									navigation={!isMobile2}
+									modules={[Pagination, Navigation, /* Autoplay, */ Mousewheel]}
+									className={classNames(s.slider, s.items)}
+								>
+									{cards.map((element, index) => (
+										<SwiperSlide key={index} className={s.item_container}>
+											<div className={s.slider_item}>
+												<Card
+													onClick={() =>
+														element.img && handleDocumentClick(element.img)
+													}
+													className={classNames(s.item, element.img && s.image)}
+												>
+													{element.element}
+												</Card>
+											</div>
+										</SwiperSlide>
+									))}
+								</Swiper>
+							) : (
+								<div className={s.items}>
+									{cards.map((element, index) => (
+										<div key={index} className={s.item_container}>
 											<Card
 												onClick={() =>
 													element.img && handleDocumentClick(element.img)
@@ -172,25 +192,10 @@ export const License = () => {
 												{element.element}
 											</Card>
 										</div>
-									</SwiperSlide>
-								))}
-							</Swiper>
-						) : (
-							<div className={s.items}>
-								{cards.map((element, index) => (
-									<div key={index} className={s.item_container}>
-										<Card
-											onClick={() =>
-												element.img && handleDocumentClick(element.img)
-											}
-											className={classNames(s.item, element.img && s.image)}
-										>
-											{element.element}
-										</Card>
-									</div>
-								))}
-							</div>
-						)}
+									))}
+								</div>
+							)}
+						</InView>
 					</div>
 				</Card>
 			</div>

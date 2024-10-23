@@ -1,12 +1,13 @@
 import React, { useState, useEffect, CSSProperties, useRef } from "react";
 import classNames from "classnames";
 import s from "./Welcome.module.scss";
+import { InView } from "@/app/ui/InView/InView";
 
 export const Welcome = () => {
 	return (
 		<header className={s.container}>
 			<div className={classNames("container", s.image_container)}>
-				<div className={s.image}>
+				<InView className={s.image}>
 					<div className={classNames(s.shadow, s.first)}></div>
 					<div className={classNames(s.shadow, s.second)}></div>
 					<img
@@ -15,10 +16,10 @@ export const Welcome = () => {
 						width={950}
 						height={633}
 					/>
-				</div>
+				</InView>
 			</div>
 			<div className={classNames("wrapper", s.content)}>
-				<div className="container">
+				<InView className="container">
 					<div className={s.left}>
 						<h1 className={s.title}>ООО “Учебный центр «Мовикк»”</h1>
 						<div className={s.description}>
@@ -29,7 +30,7 @@ export const Welcome = () => {
 							<div className={s.text}>Аккредитация ваших курсов</div>
 						</div>
 					</div>
-				</div>
+				</InView>
 			</div>
 		</header>
 	);

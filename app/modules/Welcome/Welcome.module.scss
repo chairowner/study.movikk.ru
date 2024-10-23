@@ -1,12 +1,11 @@
 @import '../../styles/theme.scss';
 @import '../../styles/adaptive.scss';
 
-.container {
-  background: $bg-welcome;
-  border-bottom-right-radius: $default-radius;
-  border-bottom-left-radius: $default-radius;
-  height: 98vh;
-  overflow: hidden;
+.container {background: $bg-welcome;
+border-bottom-right-radius: $default-radius;
+border-bottom-left-radius: $default-radius;
+height: 98vh;
+overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column-reverse;
