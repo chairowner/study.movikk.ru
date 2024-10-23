@@ -6,7 +6,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Navigation, Pagination, Autoplay, Mousewheel } from "swiper/modules";
+import {
+	Navigation,
+	Pagination,
+	/* Autoplay, */ Mousewheel,
+} from "swiper/modules";
 import { Card } from "@/app/ui/Card/Card";
 import s from "./License.module.scss";
 import { useModal } from "@/app/contexts/ModalContext";
@@ -148,12 +152,12 @@ export const License = () => {
 								pagination={{
 									clickable: true,
 								}}
-								autoplay={{
+								/* autoplay={{
 									delay: 35000,
 									disableOnInteraction: true,
-								}}
+								}} */
 								navigation={!isMobile2}
-								modules={[Pagination, Navigation, Autoplay, Mousewheel]}
+								modules={[Pagination, Navigation, /* Autoplay, */ Mousewheel]}
 								className={classNames(s.slider, s.items)}
 							>
 								{cards.map((element, index) => (

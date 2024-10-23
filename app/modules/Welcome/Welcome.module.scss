@@ -72,16 +72,14 @@
       }
     }
 
-    .circle {
-      width: 333px;
-      height: 333px;
-      border-radius: 50%;
-      border: 1px solid white;
-      margin-top: 40px;
+    .circle_wrapper {
+      position: relative;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      position: relative;
+      margin-top: 40px;
+      width: 333px;
+      height: 333px;
 
       @media (max-width: $table1) {
         width: 260px;
@@ -97,6 +95,27 @@
       @media (max-width: $mobile2) {
         width: 146px;
         height: 146px;
+      }
+
+      .circle {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 1px solid white;
+
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          bottom: -10%;
+          left: -10%;
+          border-radius: 50%;
+          position: absolute;
+          background-color: $bg-icon;
+          filter: blur(80px);
+          opacity: 0.25;
+          animation: pulse 5s ease-in-out infinite;
+        }
       }
 
       .text {
@@ -224,5 +243,20 @@
         }
       }
     }
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(10%);
+    transform: scale(1.3);
+    opacity: 0.30;
   }
 }

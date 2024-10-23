@@ -1,3 +1,4 @@
+import React, { useState, useEffect, CSSProperties, useRef } from "react";
 import classNames from "classnames";
 import s from "./Welcome.module.scss";
 
@@ -23,7 +24,8 @@ export const Welcome = () => {
 						<div className={s.description}>
 							Хотите выдавать документы государственного образца вашим ученикам?
 						</div>
-						<div className={s.circle}>
+						<div className={s.circle_wrapper}>
+							<div className={s.circle}></div>
 							<div className={s.text}>Аккредитация ваших курсов</div>
 						</div>
 					</div>
