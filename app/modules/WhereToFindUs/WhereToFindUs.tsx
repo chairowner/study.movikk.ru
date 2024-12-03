@@ -12,8 +12,8 @@ type TypeInfo = {
 const info: TypeInfo[] = [
 	{
 		icon: "whatsapp.svg",
-		text: "+7 (993) 500 800 00",
-		url: "https://wa.me/799350080000",
+		text: "+7 (993) 500 80 00",
+		url: "https://wa.me/79935008000",
 		title: "What's App",
 	},
 	{

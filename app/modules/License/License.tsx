@@ -16,7 +16,7 @@ import s from "./License.module.scss";
 import { useModal } from "@/app/contexts/ModalContext";
 import { InView } from "@/app/ui/InView/InView";
 
-const license: string = "0000000000";
+const license: string = "№ Л035-01277-66/01568012 от 28.11.2024";
 
 type CardType = {
 	img?: string;
@@ -68,12 +68,12 @@ const cards: CardType[] = [
 		),
 	},
 	{
-		img: "/images/docs/2423rfwefs.webp",
+		img: "/images/docs/zz730u_rrFY.webp",
 		element: (
 			<>
 				<div className={s.image_container}>
 					<img
-						src="/images/docs/2423rfwefs.webp"
+						src="/images/docs/zz730u_rrFY.webp"
 						alt="license"
 						width={300}
 						height={420}
@@ -83,12 +83,42 @@ const cards: CardType[] = [
 		),
 	},
 	{
-		img: "/images/docs/g4f3g35g2f.webp",
+		img: "/images/docs/F5ESbL9ov2k.webp",
 		element: (
 			<>
 				<div className={s.image_container}>
 					<img
-						src="/images/docs/g4f3g35g2f.webp"
+						src="/images/docs/F5ESbL9ov2k.webp"
+						alt="license"
+						width={300}
+						height={420}
+					/>
+				</div>
+			</>
+		),
+	},
+	{
+		img: "/images/docs/JO7iiI4Sc2U.webp",
+		element: (
+			<>
+				<div className={s.image_container}>
+					<img
+						src="/images/docs/JO7iiI4Sc2U.webp"
+						alt="license"
+						width={300}
+						height={420}
+					/>
+				</div>
+			</>
+		),
+	},
+	{
+		img: "/images/docs/TDlD6ht75_o.webp",
+		element: (
+			<>
+				<div className={s.image_container}>
+					<img
+						src="/images/docs/TDlD6ht75_o.webp"
 						alt="license"
 						width={300}
 						height={420}
@@ -143,7 +173,7 @@ export const License = () => {
 						<InView>
 							<div className={s.title}>
 								<h2>У нас есть лицензия</h2>
-								<em>№{license}</em>
+								<em>{license}</em>
 							</div>
 						</InView>
 						<InView>

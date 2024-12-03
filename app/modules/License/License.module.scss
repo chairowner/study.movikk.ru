@@ -28,11 +28,11 @@
   }
 
   .title {
-    width: 310px;
+    // width: 310px;
 
-    @media (max-width: $mobile2) {
-      width: auto;
-    }
+    // @media (max-width: $mobile2) {
+    //   width: auto;
+    // }
 
     em {
       font-size: 24px;
@@ -55,6 +55,8 @@
     }
 
     .item_container {
+      position: relative;
+
       @media (min-width: $desktop4) {
         &:nth-child(-n+3) {
           flex: 1;
